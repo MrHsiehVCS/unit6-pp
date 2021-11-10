@@ -37,8 +37,8 @@ public class Dice implements Comparable <Dice> {
 	 * @param side: the starting side on the Dice. side must be greater than sides
 	 */	
 	 public Dice (int sides, int side) {
-		currentSide = side;
 		numSides = sides;
+		setSide(side);
 	}
 	
 	/**
@@ -66,6 +66,15 @@ public class Dice implements Comparable <Dice> {
 		return numSides;
 	}
 	
+	/**
+	 * private setter for currentSide
+	 */
+	private void setSide(int side) {
+		if(side > 0 && side <= numSides) {
+			currentSide = side;
+		}
+	}
+
 	/**
 	 * Implementation of the Comparable interface
 	 * @return -1 if this.currentSide < d.currentSide
