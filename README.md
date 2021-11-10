@@ -120,7 +120,7 @@ For our simplified version, a *Player* may have the following possible **scores*
 
 Once a **score** has been used, it cannot be used again for that game. To simplify your game, *Players* must take the largest possible match. For example, if I roll a **Yahtzee**, I must score it. On the next turn, if I roll another **Yathzee**, I cannot use that score toward a **4 of a Kind** or lower. I must either use my **Mess**, or if no **Mess** is available, I just lose the turn.
 
-A **Mess* is automatically scored if either:
+A **Mess** is automatically scored if either:
 
 1. No matches are found
 2. A match is found but that **score** has already been used
