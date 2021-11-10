@@ -88,4 +88,33 @@ public class YahtzeeTests {
 
         assertEquals(Arrays.toString(copiedDice), Arrays.toString(diceToRoll));
     } 
+
+    @Test
+    void testGetLargestMatchType() {
+        final Dice[] unique = {new Dice(6,1), new Dice(6,2), new Dice(6,3), new Dice(6,4), new Dice(6,5)};
+        final Dice[] pair = {new Dice(6,2), new Dice(6,2), new Dice(6,3), new Dice(6,4), new Dice(6,5)};
+        final Dice[] triple = {new Dice(6,3), new Dice(6,3), new Dice(6,3), new Dice(6,4), new Dice(6,5)};
+        final Dice[] quadruple = {new Dice(6,4), new Dice(6,4), new Dice(6,4), new Dice(6,4), new Dice(6,5)};
+        final Dice[] quintuple = {new Dice(6,5), new Dice(6,5), new Dice(6,5), new Dice(6,5), new Dice(6,5)};
+        final Dice[] fullHouse = {new Dice(6,3), new Dice(6,3), new Dice(6,3), new Dice(6,2), new Dice(6,2)};
+        final Dice[] twoPair = {new Dice(6,1), new Dice(6,1), new Dice(6,2), new Dice(6,2), new Dice(6,5)};
+
+        assertAll("Yahtzee.largestPossibleMatch works as intended",
+            () -> assertEquals(0,Yahtzee.getLargestMatchType(unique)), 
+            () -> assertEquals(1,Yahtzee.getLargestMatchType(pair)), 
+            () -> assertEquals(2,Yahtzee.getLargestMatchType(triple)), 
+            () -> assertEquals(3,Yahtzee.getLargestMatchType(quadruple)), 
+            () -> assertEquals(4,Yahtzee.getLargestMatchType(quintuple)), 
+            () -> assertEquals(2,Yahtzee.getLargestMatchType(fullHouse)), 
+            () -> assertEquals(1,Yahtzee.getLargestMatchType(twoPair)) 
+        );
+    }
+
+    @Test
+    void testGetLargestMatchTypeDoesNotAlterParameters() {
+        final Dice[] dice = {new Dice(6,1), new Dice(6,2), new Dice(6,3), new Dice(6,4), new Dice(6,5)};
+        final Dice[] diceCopy = {new Dice(6,1), new Dice(6,2), new Dice(6,3), new Dice(6,4), new Dice(6,5)};
+        Yahtzee.getLargestMatchType(dice);
+        assertEquals(Arrays.toString(dice), Arrays.toString(diceCopy));
+    }
 }
