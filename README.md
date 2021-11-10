@@ -50,13 +50,13 @@ You may include any other `private` methods and instance variables you think app
 ### PART B Sample Run
 
 ```java
-Welcome to Blackjack! What is your name? David
-Hello David! I am Gambletron 5000! Let's play some cards.
+Welcome to Blackjack! What is your name? MrHsieh
+Hello MrHsieh! I am Gambletron 5000! Let's play some cards.
 Your Hand: Jack of Spades Ace of Clubs 
 Dealer's Hand: 2 of Spades 5 of Spades 
 Your Hand: Jack of Spades Ace of Clubs 
 Dealer's Hand: 2 of Spades 5 of Spades 
-Congrats David you got a Blackjack!
+Congrats MrHsieh you got a Blackjack!
 Result: User Wins
 Would you like to play again? (Y)es/(N)o: y
 Your Hand: 9 of Hearts Queen of Clubs 
@@ -75,9 +75,9 @@ Dealer's Hand: 3 of Hearts 5 of Hearts
 Would you like to (H)it or (S)tay: hit
 Your new hand: 3 of Clubs 2 of Clubs 10 of Spades 
 Would you like to (H)it or (S)tay: h
-Your Hand: 3 of Clubs 2 of Clubs 10 of Spades Ace of iamonds 
+Your Hand: 3 of Clubs 2 of Clubs 10 of Spades Ace of Diamonds 
 Dealer's Hand: 3 of Hearts 5 of Hearts 
-David I'm so sorry you busted!
+MrHsieh I'm so sorry you busted!
 Result: User Loses
 Would you like to play again? (Y)es/(N)o: y
 Your Hand: 10 of Diamonds King of Hearts 
@@ -89,7 +89,7 @@ Your Hand: 10 of Diamonds King of Hearts
 Dealer's Hand: 8 of Hearts 5 of Diamonds 7 of Hearts 
 Result: User Pushes
 Would you like to play again? (Y)es/(N)o: no
-Thanks for playing David! Have a great day!
+Thanks for playing MrHsieh! Have a great day!
 ```
 
 ## PART C - `Yahtzee.java`
@@ -256,5 +256,4 @@ If you have time and are looking for a challenge, implement the full Blackjack g
 - Attempted code in all required code: 20 points
 - Code is DRY and follows good method decomposition: 20 points
 - Correctly JavaDoc'ed all Code: 20 points
-- Passed all Test Cases: 30 points
-- No errors during gameplay: 10 points
+- Passed all Test Cases: 40 points
