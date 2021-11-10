@@ -98,42 +98,44 @@ In Unit 5, you figured out how to make a `Dice`. A `Dice` class has been provide
 
 ### Simplified Yahtzee Gameplay
 
-`Yahtzee` is a `Dice` game that allows players to roll 5 six-sided `Dice` in order to try to make sets and/or runs. There are two *Players*: the *User* and the *Computer*. Each *Player* gets 5 turns. *Players* alternate turns with the *User* going first. After the 5 turns, display the total scores and who the winner is. Prompt the *User* to play again. If they decide to, clear the scores and start a new game. If they do not decide to, thank them for their time and end the program.
+`Yahtzee` is a `Dice` game that allows players to roll 5 six-sided `Dice` in order to try to make sets and/or runs. There are two *Players*: the *User* and the *Computer*. Each *Player* gets 5 rounds. *Players* alternate rounds with the *User* going first. After the 5 rounds, display the total scores and who the winner is. Prompt the *User* to play again. If they decide to, clear the scores and start a new game. If they do not decide to, thank them for their time and end the program.
 
-#### How a *User* turn works
+#### How a *User* round works
 
-The *User* rolls five separate `Dice`. The resutls are displayed. The *User* can choose any, or none, of the 5 `Dice` to re-roll. If none, the *User* scores. If the use selected `Dice` to re-roll, only the selected `Dice` are re-rolled. The *User* may then select once more to re-roll any or no `Dice`. The *User* then scores for the round.
+The *User* rolls five separate `Dice`. The results are displayed. The *User* can choose any, or none, of the 5 `Dice` to re-roll. If none, the *User* scores. If the *User* selected `Dice` to re-roll, only the selected `Dice` are re-rolled. The *User* may then select once more to re-roll any or no `Dice`. The *User* then scores for the round.
 
 #### How a *Computer* turn works
 
-The *Computer* rolls five separate `Dice`. The *Computer* can then use any logic you choose for deciding how to use it's next two re-rolls. The *Computer* then scores for the round. If you are looking for a challenge, maximize the AI so that it regularly beats humans.
+The *Computer* rolls five separate `Dice`. The *Computer* can then use any logic you choose for deciding how to use its next two re-rolls. The *Computer* then scores for the round. If you are looking for a challenge, maximize the AI so that it regularly beats humans.
 
 #### How scoring works
 
-For our simplified version, a *Player* may have the following possible **scores**:
+For our simplified version, a *Player* may have the following possible types of **scores**:
 
-- **Pair**: The sum of any two matching `Dice`.
-- **3 of a Kind**: The sum of any three matching `Dice`.
-- **4 of a Kind**: The sum of any four matching `Dice`
-- **Yahtzee**: The sum of any five matching `Dice`.
-- **Mess**: The sum of all 5 `Dice` regardless of matching.
+- **Unique**: When all 5 `Dice` are different 
+- **Pair**: When any two `Dice` are matching
+- **3 of a Kind**: When any 3 `Dice` are matching
+- **4 of a Kind**: When any 4 `Dice` are matching
+- **Yahtzee**: When all 5 `Dice` are matching
 
-Once a **score** has been used, it cannot be used again for that game. To simplify your game, *Players* must take the largest possible match. For example, if I roll a **Yahtzee**, I must score it. On the next turn, if I roll another **Yathzee**, I cannot use that score toward a **4 of a Kind** or lower. I must either use my **Mess**, or if no **Mess** is available, I just lose the turn.
+When a *Player* scores, they gain points equal to the sum of all 5 `Dice`. Once a *Player* uses a type of **score**, they cannot use the same type of **score** again for the rest of that game. To simplify your game, *Players* must take the largest possible match. For example, if I roll a **Yahtzee**, I must score it. On the next turn, if I roll another **Yahtzee**, I cannot use that score toward a **4 of a Kind** or lower, and I just waste the round.
 
-A **Mess** is automatically scored if either:
-
-1. No matches are found
-2. A match is found but that **score** has already been used
 
 ### Required Methods
 
 1. `public Yahtzee()`: This should instaniate any instance variables you have, especially your array of five `Dice`. Don't forget, you are interacting with a *User* so you may need a `Scanner`.
 2. `public void play()`: The method to be called to actually play a game. This is where you implement the flow of the **Gameplay**.
 3. `public static int getScore(int[] scores)`: Given an array of scores, return the sum of those scores. Do not alter parameters.
-4. `public static boolean beenUsed(int[] scores, int scoreIndex)`: Return `true` if the score in `scores[scoreIndex]` has been used (`0` represents an unused score).
+4. `public static boolean beenUsed(int[] scores, int scoreIndex)`: Return `true` if the score in `scores[scoreIndex]` has been used (`0` represents an unused score). Each index `scores` corresponds to a unique scoreingg category
 5. `public static Dice[] rollDice(Dice[] dice, boolean[] toRoll)`: `dice` and `toRoll` are parallel arrays. Return a new array where the `Dice` in `dice` that correspond to `true` in `toRoll` were rolled, and those that correspond to `false` were not. Do not alter parameters.
+6. `public static int largestPossibleMatch(Dice[] dice)`: Returns an integer that corresponds to largest possible match of the `Dice`. These integers are the indices for the array that will store *Player* scores. Do not alter parameters. The expected return values are as folows:
+    - **Unique** : 0
+    - **Pair** : 1
+    - **3 of a kind** : 2
+    - **4 of a kind** : 3
+    - **Yahtzee** : 4
 
-You may include any other `private` methods and instance variables you think applicable. You should have nothing else that is `public` other than what is listed above.
+You may include any other `private` methods and instance variables you think applicable. You should have nothing else that is `public` other than what is listed above. 
 
 ### PART C Sample Run
 
