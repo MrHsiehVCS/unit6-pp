@@ -19,11 +19,15 @@ public class DeckTests {
     @Test
     void dealAndNumLeftWorkCorrectly() throws Exception {
         Deck testDeck = new Deck();
-        int testTimes = (int) (Math.random() * testDeck.numLeft());
-        for(int i = 0; i < testTimes; i++) {
-            testDeck.deal();
+        int expectedDeckSize = DECK_SIZE;
+        for(int j = 0; j < 6; j++) {
+            int testTimes = j;
+            for(int i = 0; i < testTimes; i++) {
+                testDeck.deal();
+            }
+            expectedDeckSize -= testTimes;
+            assertEquals(expectedDeckSize, testDeck.numLeft());
         }
-        assertEquals(DECK_SIZE - testTimes, testDeck.numLeft());
     }
 
     @Test
