@@ -100,13 +100,13 @@ public class YahtzeeTests {
         final Dice[] twoPair = {new Dice(6,1), new Dice(6,1), new Dice(6,2), new Dice(6,2), new Dice(6,5)};
 
         assertAll("Yahtzee.largestPossibleMatch works as intended",
-            () -> assertEquals(0,Yahtzee.getLargestMatchType(unique)), 
-            () -> assertEquals(1,Yahtzee.getLargestMatchType(pair)), 
-            () -> assertEquals(2,Yahtzee.getLargestMatchType(triple)), 
-            () -> assertEquals(3,Yahtzee.getLargestMatchType(quadruple)), 
-            () -> assertEquals(4,Yahtzee.getLargestMatchType(quintuple)), 
-            () -> assertEquals(2,Yahtzee.getLargestMatchType(fullHouse)), 
-            () -> assertEquals(1,Yahtzee.getLargestMatchType(twoPair)) 
+            () -> assertEquals(1,Yahtzee.getLargestMatchType(unique)), 
+            () -> assertEquals(2,Yahtzee.getLargestMatchType(pair)), 
+            () -> assertEquals(3,Yahtzee.getLargestMatchType(triple)), 
+            () -> assertEquals(4,Yahtzee.getLargestMatchType(quadruple)), 
+            () -> assertEquals(5,Yahtzee.getLargestMatchType(quintuple)), 
+            () -> assertEquals(3,Yahtzee.getLargestMatchType(fullHouse)), 
+            () -> assertEquals(2,Yahtzee.getLargestMatchType(twoPair)) 
         );
     }
 
@@ -117,4 +117,7 @@ public class YahtzeeTests {
         Yahtzee.getLargestMatchType(dice);
         assertEquals(Arrays.toString(dice), Arrays.toString(diceCopy));
     }
+
+    // TODO: test the actual gameplay loop. 
+
 }

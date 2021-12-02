@@ -11,21 +11,25 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class BlackjackTests {
 
-    private static Card[] hand1 = {}, hand2 = { new Card("Clubs", "Ace"), new Card("Spades", "Jack") },
-            hand3 = { new Card("Clubs", "2"), new Card("Diamonds", "10"), new Card("Spades", "7") },
-            hand4 = { new Card("Clubs", "2"), new Card("Diamonds", "10"), new Card("Spades", "7"),
-                    new Card("Diamonds", "Ace"), new Card("Hearts", "3") },
-            hand5 = { new Card("Clubs", "2"), new Card("Diamonds", "10"), new Card("Spades", "9") },
-            hand6 = { new Card("Clubs", "2"), new Card("Diamonds", "10"), new Card("Spades", "4") },
-            hand7 = { new Card("Diamonds", "10"), new Card("Spades", "7"), new Card("Hearts", "3") };
+    private static Card[] 
+        hand1 = {}, 
+        hand2 = { new Card("Clubs", "Ace"), new Card("Spades", "Jack") },
+        hand3 = { new Card("Clubs", "2"), new Card("Diamonds", "10"), new Card("Spades", "7") },
+        hand4 = { new Card("Clubs", "2"), new Card("Diamonds", "10"), new Card("Spades", "7"),
+                new Card("Diamonds", "Ace"), new Card("Hearts", "3") },
+        hand5 = { new Card("Clubs", "2"), new Card("Diamonds", "10"), new Card("Spades", "9") },
+        hand6 = { new Card("Clubs", "2"), new Card("Diamonds", "10"), new Card("Spades", "4") },
+        hand7 = { new Card("Diamonds", "10"), new Card("Spades", "7"), new Card("Hearts", "3") };
 
-        private static Card[] hand1Copy = {}, hand2Copy = { new Card("Clubs", "Ace"), new Card("Spades", "Jack") },
-            hand3Copy = { new Card("Clubs", "2"), new Card("Diamonds", "10"), new Card("Spades", "7") },
-            hand4Copy = { new Card("Clubs", "2"), new Card("Diamonds", "10"), new Card("Spades", "7"),
-                    new Card("Diamonds", "Ace"), new Card("Hearts", "3") },
-            hand5Copy = { new Card("Clubs", "2"), new Card("Diamonds", "10"), new Card("Spades", "9") },
-            hand6Copy = { new Card("Clubs", "2"), new Card("Diamonds", "10"), new Card("Spades", "4") },
-            hand7Copy = { new Card("Diamonds", "10"), new Card("Spades", "7"), new Card("Hearts", "3") };
+    private static Card[] 
+        hand1Copy = {}, 
+        hand2Copy = { new Card("Clubs", "Ace"), new Card("Spades", "Jack") },
+        hand3Copy = { new Card("Clubs", "2"), new Card("Diamonds", "10"), new Card("Spades", "7") },
+        hand4Copy = { new Card("Clubs", "2"), new Card("Diamonds", "10"), new Card("Spades", "7"),
+                new Card("Diamonds", "Ace"), new Card("Hearts", "3") },
+        hand5Copy = { new Card("Clubs", "2"), new Card("Diamonds", "10"), new Card("Spades", "9") },
+        hand6Copy = { new Card("Clubs", "2"), new Card("Diamonds", "10"), new Card("Spades", "4") },
+        hand7Copy = { new Card("Diamonds", "10"), new Card("Spades", "7"), new Card("Hearts", "3") };
 
     @Test
     void testCalcPoints() throws Exception {
@@ -106,4 +110,5 @@ public class BlackjackTests {
                 () -> assertEquals(Arrays.toString(hand6Copy), Arrays.toString(hand6)));       
     }
 
+    // TODO: test play()
 }

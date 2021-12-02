@@ -41,13 +41,15 @@ When the game ends, be sure to print the result *Blackjack*, *Bust*, *Win*, *Los
 2. `public void play()`: The method to be called to actually play a game. This is where you implement the flow of the **Gameplay**.
 3. `public static int calcPoints(Card[] hand)`: This method takes an array of `Card`s and returns the amount of points that hand is worth. Does not alter parameters.
 4. `public static String determineResult(Card[] userHand, Card[] dealerHand)`: Returns a `String` in one of the following formats: `"User Wins"`, `"User Loses"`, or `"User Pushes"`. Does not alter parameters.
-5. `public static boolean isBust(Card[] hand)`: returns    `true` if the hand is a *Bust*, `false` otherwise. Does not alter parameters.
+5. `public static boolean isBust(Card[] hand)`: returns `true` if the hand is a *Bust*, `false` otherwise. Does not alter parameters.
 6. `public static boolean isBlackjack(Card[] hand)`: returns `true` if the hand is a *Blackjack*, `false` otherwise. Does not alter parameters.
 7. `public static boolean dealerKeepHitting(Card[] hand)`: return `true` if the dealer should keep hitting (score of hand is 16 or less), `false` otherwise. Does  not alter parameters.
 
 You may include any other `private` methods and instance variables you think applicable. You should have nothing else that is `public` other than what is listed above.
 
 ### PART B Sample Run
+
+*Note:* Gameplay does not have to match the given example exactly (have some fun with it!) but it should go through the same general flow, and account for upper/lowercase, and also for invalid input. 
 
 ```java
 Welcome to Blackjack! What is your name? MrHsieh
@@ -92,7 +94,7 @@ Would you like to play again? (Y)es/(N)o: no
 Thanks for playing MrHsieh! Have a great day!
 ```
 
-## PART C - `Yahtzee.java`
+## BONUS: PART C - `Yahtzee.java`
 
 In Unit 5, you figured out how to make a `Dice`. A `Dice` class has been provided for you in this project. In **PART C** you are going to create a simplified version of the dice game `Yahtzee`.
 
@@ -128,16 +130,18 @@ When a *Player* scores, they gain points equal to the sum of all 5 `Dice`. Once 
 3. `public static int getScore(int[] scores)`: Given an array of scores, return the sum of those scores. Do not alter parameters.
 4. `public static boolean beenUsed(int[] scores, int scoreIndex)`: Return `true` if the score in `scores[scoreIndex]` has been used (`0` represents an unused score). Each index `scores` corresponds to a unique scoreingg category
 5. `public static Dice[] rollDice(Dice[] dice, boolean[] toRoll)`: `dice` and `toRoll` are parallel arrays. Return a new array where the `Dice` in `dice` that correspond to `true` in `toRoll` were rolled, and those that correspond to `false` were not. Do not alter parameters.
-6. `public static int largestPossibleMatch(Dice[] dice)`: Returns an integer that corresponds to largest possible match of the `Dice`. These integers are the indices for the array that will store *Player* scores. Do not alter parameters. The expected return values are as folows:
-    - **Unique** : 0
-    - **Pair** : 1
-    - **3 of a kind** : 2
-    - **4 of a kind** : 3
-    - **Yahtzee** : 4
+6. `public static int largestPossibleMatch(Dice[] dice)`: Returns an integer that corresponds to largest possible match of the `Dice`. Do not alter parameters. The expected return values are as folows:
+    - **Unique** : 1
+    - **Pair** : 2
+    - **3 of a kind** : 3
+    - **4 of a kind** : 4
+    - **Yahtzee** : 5
 
 You may include any other `private` methods and instance variables you think applicable. You should have nothing else that is `public` other than what is listed above. 
 
 ### PART C Sample Run
+
+*Note:* Gameplay does not have to match the given example exactly (have some fun with it!) but it should go through the same general flow, and account for upper/lowercase, and also for invalid input. 
 
 ```java
 Welcome to Yahtzee! What is your name? David
@@ -249,13 +253,22 @@ Would you like to play again? (Y)es/(N)o: no
 Thanks for playing David! Have a great day!
 ```
 
-## BONUS
+## BONUS BONUS: Real versions of the games
 
 If you have time and are looking for a challenge, implement the full Blackjack game or the full Yahtzee game.
+For blackjack, the main change would be in how scores of hands are calculated (Ace is worth 11 or 1).
+For Yahtzee, the scoring methods get a bit more complicated, but the general flow of the game is the same. 
+You can find the rules for both games online. 
 
 ## GRADING BREAKDOWN
 
-- Attempted code in all required code: 20 points
+- Attempted code in all required sections: 20 points
 - Code is DRY and follows good method decomposition: 20 points
 - Correctly JavaDoc'ed all Code: 20 points
-- Passed all Test Cases: 40 points
+- Passed all Test Cases: 30 points
+- Manual testing of gameplay: 10 points
+Total: 100 points
+
+- Extra Credit for Yahtzee: 10 points
+- Extra Credit for a Yahtzee AI that regularly ties or beats Mr. Hsieh: 5 points
+- Extra Credit for full Blackjack/full Yahtzee: 5 points each
