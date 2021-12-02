@@ -110,5 +110,5 @@ public class BlackjackTests {
                 () -> assertEquals(Arrays.toString(hand6Copy), Arrays.toString(hand6)));       
     }
 
-    // TODO: test play()
+    // Blackjack.play() will be tested manually
 }

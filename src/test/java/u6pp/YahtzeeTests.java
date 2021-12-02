@@ -119,6 +119,6 @@
 //         assertEquals(Arrays.toString(dice), Arrays.toString(diceCopy));
 //     }
 
-//     // TODO: test the actual gameplay loop. 
+//     // Yahtzee.play() will be tested manually 
 
 // }
