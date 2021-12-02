@@ -2,6 +2,7 @@ package u6pp;
 
 /**
  * The Dice class represents an n-Sided dice. The default number of sides is 6
+ * Do not make any changes to this class
  */
 public class Dice implements Comparable <Dice> {
 

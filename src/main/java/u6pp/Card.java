@@ -1,7 +1,10 @@
 package u6pp;
 
 /**
- * A class that represents a standard playing Card (values 2 - 10, Jack - Ace) (suits clubs, diamonds, hearts, spades)
+ * A class that represents a standard playing Card 
+ * (values are 2 - 10 and Jack - Ace) 
+ * (suits are clubs, diamonds, hearts, spades)
+ * Do not make any changes to this class
  */
 public class Card implements Comparable<Card>{
 	
