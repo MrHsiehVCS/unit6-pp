@@ -4,15 +4,19 @@ For this project, you will be writing three different classes: `Deck`, `Blackjac
 
 ## GRADING BREAKDOWN
 
-- Attempted code in all required sections: 20 points
-- Code is DRY and follows good method decomposition: 20 points
-- Correctly JavaDoc'ed all Code: 20 points
-- Passed all Test Cases: 30 points
-- Manual testing of gameplay: 10 points
-Total: 100 points
+- Code compiles & runs without errors: 1 pts
+- Formatting/indentation: 2 points
+- All code commented: 2 points
+- No public methods/attributes besides the ones specified (additional private methods/attributes are encouraged): 2 point
+- All code is DRY (Don't repeat yourself): 3 points
+- Passes all test cases: 20 points
+Total: 30 points
 
-- Extra Credit for a Yahtzee AI that regularly ties or beats Mr. Hsieh: 5 points
-- Extra Credit for making full Blackjack/full Yahtzee: 5 points each
+### Extra Credit
+- Simple version of Yahtzee
+- full version of blackjack
+- full version of Yahtzee
+- Yahtzee AI that regularly ties or beats Mr. Hsieh
 
 ## PART A - `Deck.java`
 
@@ -106,8 +110,9 @@ Would you like to play again? (Y)es/(N)o: no
 Thanks for playing MrHsieh! Have a great day!
 ```
 
-## PART C - `Yahtzee.java`
+## OPTIONAL: PART C - `Yahtzee.java`
 
+This part is not required for full score on the project.
 In Unit 5, you figured out how to make a `Dice`. A `Dice` class has been provided for you in this project. In **PART C** you are going to create a simplified version of the dice game `Yahtzee`.
 
 ### Simplified Yahtzee Gameplay
